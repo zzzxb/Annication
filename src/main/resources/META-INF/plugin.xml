@@ -6,13 +6,18 @@
 
     <depends>com.intellij.modules.platform</depends>
 
-    <resource-bundle>messages.MyBundle</resource-bundle>
-
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.zzzxb.annication.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
     </extensions>
 
-    <applicationListeners>
-        <listener class="com.github.zzzxb.annication.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
-    </applicationListeners>
+    <actions>
+        <action
+                class="com.github.zzzxb.annication.EditorCustom"
+                text="Edit The Current Line"
+                description="Add annotation or remove annotation">
+            <keyboard-shortcut first-keystroke="control MINUS" keymap="$default"/>
+            <keyboard-shortcut first-keystroke="ctrl MINUS" keymap="Mac OS X"/>
+            <keyboard-shortcut first-keystroke="ctrl MINUS" keymap="Mac OS X 10.5+"/>
+            <keyboard-shortcut first-keystroke="ctrl MINUS" keymap="macOS System Shortcuts"/>
+        </action>
+    </actions>
 </idea-plugin>
